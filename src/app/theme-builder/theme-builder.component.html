@@ -1,0 +1,138 @@
+ 
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <app-lightness-picker></app-lightness-picker>
+      <a mat-list-item (click)="makeLink()"><mat-icon>link</mat-icon> Share via Link</a>
+      <a mat-list-item (click)="exportCSS()"><mat-icon>content_copy</mat-icon> CSS</a>
+      <a mat-list-item (click)="exportSCSS()"><mat-icon>content_copy</mat-icon> Angular SCSS</a>
+      <a mat-list-item *ngIf="!showingSource" (click)="showSource(true)"><mat-icon>code</mat-icon> Source SCSS</a>
+      <a mat-list-item *ngIf="showingSource" (click)="showSource(false)"><mat-icon>preview</mat-icon> Preview</a>
+      <a mat-list-item (click)="showCredits()"><mat-icon>more_vert</mat-icon>Credit</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+   
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <button mat-button><img class="logo" src="./../../assets/angular-logo.svg">Material Theme</button>
+    
+      <span class="fill-space"></span>
+      <div class="button-group" *ngIf="!(isHandset$ | async)">
+        <app-lightness-picker></app-lightness-picker>
+
+        <button mat-raised-button (click)="makeLink()"><mat-icon>link</mat-icon>Link</button>
+        <button mat-raised-button (click)="exportCSS()"><mat-icon>content_copy</mat-icon>CSS</button>
+        <button mat-raised-button (click)="exportSCSS()"><mat-icon>content_copy</mat-icon>SCSS</button>
+              
+        <button *ngIf="!showingSource" mat-raised-button (click)="showSource(true)"><mat-icon>code</mat-icon>Source</button>
+        <button *ngIf="showingSource" mat-raised-button (click)="showSource(false)"><mat-icon>preview</mat-icon>Preview</button>
+   
+        <mat-button-toggle-group class="button-toggle" [formControl]="version">
+          <mat-button-toggle [value]="11"><mat-icon>chevron_left</mat-icon>11</mat-button-toggle>
+          <mat-button-toggle [value]="12">12<mat-icon>chevron_right</mat-icon></mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <button mat-flat-button color="primary" (click)="showCredits()"><mat-icon>more_vert</mat-icon></button>
+
+      </div>
+    </mat-toolbar>
+
+    <main class="grid inner mat-typography mat-app-background">
+      <section>
+        <div class="tools">
+          <app-palette-picker></app-palette-picker>
+          <mat-divider></mat-divider>
+          <app-icon-picker></app-icon-picker>
+          <mat-divider></mat-divider>
+          <app-font-picker></app-font-picker>
+        </div>
+      </section>
+
+      <section>
+        <div [class.ready]="isReady">
+          <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
+          <pre [style.display]="showingSource ? 'block': 'none'"
+              class="hljs"><code class="scss" [innerHTML]="sourcePretty"></code></pre>
+        </div>
+        <div class="loading ready" *ngIf="!isReady">
+          <span class="message">Loading...</span>
+          <div class="wrapper">
+            <mat-spinner mode="indeterminate"></mat-spinner>
+          </div>
+        </div>
+      </section>
+    </main>
+  </mat-sidenav-content> 
+
+</mat-sidenav-container>
+
+
+<!--
+<div class="inner mat-typography mat-app-background">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <img src="/assets/angular-material-logo.svg" height="48" alt="logo"> Material Theme Generator
+      <app-lightness-picker></app-lightness-picker>
+      <span class="spacer"></span>
+      <div class="view">
+        <label>View</label>
+        <mat-button-toggle-group class="theme-alternate" [formControl]="showSource">
+          <mat-button-toggle [value]="false">Demo</mat-button-toggle>
+          <mat-button-toggle [value]="true">SCSS</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <div class="version">
+        <label>Version</label>
+        <mat-button-toggle-group class="theme-alternate" [formControl]="version">
+          <mat-button-toggle [value]="11">&lt;= 11</mat-button-toggle>
+          <mat-button-toggle [value]="12">12+</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <div class="export">
+        <label>Export</label>
+        <mat-button-toggle-group class="theme-alternate" [formControl]="exporter">
+          <mat-button-toggle [value]="1" color="accent" (click)="exportSCSS()">SCSS</mat-button-toggle>
+          <mat-button-toggle [value]="2" color="accent" (click)="exportCSS()">CSS</mat-button-toggle>
+          <mat-button-toggle [value]="3" color="accent" (click)="makeLink()">Shareable Link</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="button-group">
+        <button mat-flat-button color="primary" (click)="showCredits()">Credits</button>
+        <a href="https://github.com/arciisine/MaterialThemeGenerator" mat-icon-button color="primary" title="GitHub"
+          target="_blank" rel="noopener">
+          <mat-icon svgIcon="github"></mat-icon>
+        </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="tools">
+    <app-palette-picker></app-palette-picker>
+    <mat-divider></mat-divider>
+    <app-icon-picker></app-icon-picker>
+    <mat-divider></mat-divider>
+    <app-font-picker></app-font-picker>
+  </div>
+  <div class="preview" [class.ready]="isReady">
+    <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
+    <pre [style.display]="showingSource ? 'block': 'none'"
+      class="hljs"><code class="scss" [innerHTML]="sourcePretty"></code></pre>
+  </div>
+  <div class="preview loading ready" *ngIf="!isReady">
+    <span class="message">Loading...</span>
+    <div class="wrapper">
+      <mat-spinner mode="indeterminate"></mat-spinner>
+    </div>
+  </div>
+</div>
+-->

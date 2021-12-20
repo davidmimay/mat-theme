@@ -1,0 +1,255 @@
+/**
+* Generated theme by Material Theme Generator
+* https://material-theme-generator.travetto.io
+*/
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+
+// @import '~@angular/material/theming';
+@use '~@angular/material' as mat;
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+
+$fontConfig: (
+  display-4: mat.define-typography-level(112px, 112px, 300, 'Raleway', -0.0134em),
+  display-3: mat.define-typography-level(56px, 56px, 400, 'Raleway', -0.0089em),
+  display-2: mat.define-typography-level(45px, 48px, 400, 'Raleway', 0.0000em),
+  display-1: mat.define-typography-level(34px, 40px, 400, 'Raleway', 0.0074em),
+  headline: mat.define-typography-level(24px, 32px, 400, 'Raleway', 0.0000em),
+  title: mat.define-typography-level(20px, 32px, 500, 'Raleway', 0.0075em),
+  subheading-2: mat.define-typography-level(16px, 28px, 400, 'Raleway', 0.0094em),
+  subheading-1: mat.define-typography-level(15px, 24px, 500, 'Raleway', 0.0067em),
+  body-2: mat.define-typography-level(14px, 24px, 500, 'Raleway', 0.0179em),
+  body-1: mat.define-typography-level(14px, 20px, 400, 'Raleway', 0.0179em),
+  button: mat.define-typography-level(14px, 14px, 500, 'Raleway', 0.0893em),
+  caption: mat.define-typography-level(12px, 20px, 400, 'Raleway', 0.0333em),
+  input: mat.define-typography-level(inherit, 1.125, 400, 'Raleway', 1.5px)
+);
+
+$light-text: #ffffff;
+$light-primary-text: $light-text;
+$light-accent-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
+
+$dark-text: #111111;
+$dark-primary-text: rgba($dark-text, 0.87);
+$dark-accent-text: rgba(rgba(black, 0.87), 0.54);
+$dark-disabled-text: rgba(rgba(black, 0.87), 0.38);
+$dark-dividers: rgba(rgba(black, 0.87), 0.12);
+$dark-focused: rgba(rgba(black, 0.87), 0.12);
+
+$light-theme-foreground-palette: (
+  base:              black,
+  divider:           rgba(black, 0.12),
+  dividers:          rgba(black, 0.12),
+  disabled:          rgba(black, 0.38),
+  disabled-button:   rgba($dark-text, 0.26),
+  disabled-text:     rgba(black, 0.38),
+  elevation:         black,
+  secondary-text:    $dark-accent-text,
+  hint-text:         rgba(black, 0.38),
+  accent-text:       $dark-accent-text,
+  icon:              $dark-accent-text,
+  icons:             $dark-accent-text,
+  text:              rgba(black, 0.87),
+  slider-min:        rgba(black, 0.87),
+  slider-off:        rgba($dark-text, 0.26),
+  slider-off-active: rgba(black, 0.38),
+);
+
+$dark-theme-foreground-palette: (
+  base:              $light-text,
+  divider:           rgba(white, 0.12),
+  dividers:          rgba(white, 0.12),
+  disabled:          rgba(white, 0.5),
+  disabled-button:   rgba($light-text, 0.3),
+  disabled-text:     rgba(white, 0.5),
+  elevation:         black,
+  hint-text:         rgba(white, 0.5),
+  secondary-text:    $light-accent-text,
+  accent-text:       $light-accent-text,
+  icon:              $light-text,
+  icons:             $light-text,
+  text:              $light-text,
+  slider-min:        $light-text,
+  slider-off:        rgba($light-text, 0.3),
+  slider-off-active: rgba($light-text, 0.3),
+);
+
+@include mat.core($fontConfig);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mat-primary: (
+  50: #e3f5e6,
+  100: #b8e7c1,
+  200: #89d797,
+  300: #59c66d,
+  400: #36ba4e,
+  500: #12ae2f,
+  600: #10a72a,
+  700: #0d9d23,
+  800: #0a941d,
+  900: #058412,
+  A100: #d5ffcd,
+  A200: #aaff9a,
+  A400: #7fff67,
+  A700: #6aff4e,
+  contrast : (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87)
+  )
+);
+$mat-accent: (
+  50: #e3e3e3,
+  100: #b9baba,
+  200: #8b8c8c,
+  300: #5c5e5e,
+  400: #393c3c,
+  500: #161919,
+  600: #131616,
+  700: #101212,
+  800: #0c0e0e,
+  900: #060808,
+  A100: #56ffc0,
+  A200: #23ffad,
+  A400: #00ef92,
+  A700: #00d682,
+  contrast : (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87)
+  )
+);
+$mat-warn: (
+  50: #ffe0e0,
+  100: #ffb3b3,
+  200: #ff8080,
+  300: #ff4d4d,
+  400: #ff2626,
+  500: #ff0000,
+  600: #ff0000,
+  700: #ff0000,
+  800: #ff0000,
+  900: #ff0000,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffd2da,
+  A700: #ffb9c4,
+  contrast : (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgba(black, 0.87),
+    A700: rgba(black, 0.87)
+  )
+);
+
+$themePrimary: mat.define-palette($mat-primary);
+$themeAccent: mat.define-palette($mat-accent);
+$themeWarn: mat.define-palette($mat-warn);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat.define-light-theme($themePrimary, $themeAccent, $themeWarn);
+$altTheme: mat.define-dark-theme($themePrimary, $themeAccent, $themeWarn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($theme);
+
+.theme-alternate {
+  @include mat.all-component-themes($altTheme);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+h2,h3,h4 {
+  a.help {
+    span.mat-badge-content {
+      background:black;
+      opacity: .7;
+      z-index:1;
+      color: white;
+      transition: all .15s ease-in-out;
+    }
+    &:hover {
+      span.mat-badge-content {
+        background: darkgreen;
+      }
+    }
+  }  
+}
+
+mat-icon[data-close], mat-icon[svgicon="github"] {
+  color: white;
+}
+
+mat-dialog-container.mat-dialog-container, 
+mat-dialog-container [mat-dialog-content] {
+  padding: 0;
+  margin: 0;
+}
+
+.mat-simple-snackbar-action {
+  a, button {
+    color: white; 
+  }
+}
+
+mat-divider {
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+}
+
+.preview {
+  app-icon-notify {
+    a {
+      color: inherit;
+    }
+  }
+}
