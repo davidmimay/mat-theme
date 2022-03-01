@@ -46,7 +46,7 @@
             "styles": [
               "src/styles.scss",
               {
-                "input": "node_modules/highlight.js/styles/darkula.css",
+                "input": "node_modules/highlight.js/styles/dracula.css",
                 "inject": true
               }
             ],
@@ -89,7 +89,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MaterialThemeGenerator:build"
+            "browserTarget": "MaterialThemeGenerator:build",
+            "disableHostCheck": true
           },
           "configurations": {
             "production": {

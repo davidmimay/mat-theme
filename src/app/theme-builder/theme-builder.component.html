@@ -59,18 +59,24 @@
       </section>
 
       <section>
-        <div [class.ready]="isReady">
-          <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
-          <pre [style.display]="showingSource ? 'block': 'none'"
-              class="hljs"><code class="scss" [innerHTML]="sourcePretty"></code></pre>
-        </div>
-        <div class="loading ready" *ngIf="!isReady">
-          <span class="message">Loading...</span>
-          <div class="wrapper">
-            <mat-spinner mode="indeterminate"></mat-spinner>
+        <mat-card>
+          
+          <div class="loading ready" *ngIf="!isReady">
+            <div class="wrapper">
+              <mat-spinner mode="indeterminate"></mat-spinner>
+            </div>
           </div>
-        </div>
+
+          <div [class.ready]="isReady">
+              <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
+              <pre [style.display]="showingSource ? 'block': 'none'" class="hljs">
+                <code class="scss" [innerHTML]="sourcePretty"></code>
+              </pre>
+          </div>
+          
+        </mat-card>
       </section>
+      
     </main>
   </mat-sidenav-content> 
 

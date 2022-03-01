@@ -1,4 +1,4 @@
-/*
+
 :host {
   width: 100vw;
   height: 100vh;
@@ -65,12 +65,19 @@ mat-toolbar {
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
 }
 
-*/
+
 
 // NEW STUFF
+iframe {
+  border-width: 0px;
+}
+mat-spinner {
+  margin: 1em auto;
+}
 section {
   margin: 1rem;
   overflow: hidden;
@@ -99,12 +106,17 @@ button {
 }
 
 .grid {
-  margin: 1rem;
+  margin: 1rem auto;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 
+mat-card {
+  padding: 0px;
+  overflow: hidden;
+  border-radius: 20px;
+}
 /*
 mat-card {
   // border-radius: 30px;
