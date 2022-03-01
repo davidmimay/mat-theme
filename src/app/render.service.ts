@@ -221,8 +221,14 @@ $fontConfig: (
 
 // Foreground Elements
 
-// Light Theme Text
+// Teme color variables
+$light-text: ${theme.palette.darkText};
+$light-background: ${theme.palette.lightBackground};
+
 $dark-text: ${theme.palette.lightText};
+$dark-background: ${theme.palette.darkBackground};
+
+// Light Theme Text
 $dark-primary-text: rgba($dark-text, 0.87);
 $dark-accent-text: rgba($dark-primary-text, 0.54);
 $dark-disabled-text: rgba($dark-primary-text, 0.38);
@@ -248,8 +254,36 @@ $mat-light-theme-foreground: (
   slider-off-active: $dark-disabled-text,
 );
 
-// Dark Theme text
-$light-text: ${theme.palette.darkText};
+// Light Theme Background
+$light-bg-darker-5:   darken($light-background, 5%);
+$light-bg-darker-10:  darken($light-background, 10%);
+$light-bg-darker-20:  darken($light-background, 20%);
+$light-bg-darker-30:  darken($light-background, 30%);
+$light-bg-lighter-5:  lighten($light-background, 5%);
+$dark-bg-tooltip:     lighten($dark-background, 20%);
+$dark-bg-alpha-4:     rgba($dark-background, 0.04);
+$dark-bg-alpha-12:    rgba($dark-background, 0.12);
+
+// Light Theme Palette
+$mat-light-theme-background: (
+  background:               $light-background,
+  status-bar:               $light-bg-darker-20,
+  app-bar:                  $light-bg-darker-5,
+  hover:                    $dark-bg-alpha-4,
+  card:                     $light-bg-lighter-5,
+  dialog:                   $light-bg-lighter-5,
+  tooltip:                  $dark-bg-tooltip,
+  disabled-button:          $dark-bg-alpha-12,
+  raised-button:            $light-bg-lighter-5,
+  focused-button:           $dark-focused,
+  selected-button:          $light-bg-darker-20,
+  selected-disabled-button: $light-bg-darker-30,
+  disabled-button-toggle:   $light-bg-darker-10,
+  unselected-chip:          $light-bg-darker-10,
+  disabled-list-option:     $light-bg-darker-10,
+);
+
+// Dark Theme Text
 $light-primary-text: $light-text;
 $light-accent-text: rgba($light-primary-text, 0.7);
 $light-disabled-text: rgba($light-primary-text, 0.5);
@@ -275,46 +309,15 @@ $mat-dark-theme-foreground: (
   slider-off-active: rgba($light-text, 0.3),
 );
 
-// Background config
-// Light bg
-$light-background:    ${theme.palette.lightBackground};
-$light-bg-darker-5:   darken($light-background, 5%);
-$light-bg-darker-10:  darken($light-background, 10%);
-$light-bg-darker-20:  darken($light-background, 20%);
-$light-bg-darker-30:  darken($light-background, 30%);
-$light-bg-lighter-5:  lighten($light-background, 5%);
-$dark-bg-tooltip:     lighten(${theme.palette.darkBackground}, 20%);
-$dark-bg-alpha-4:     rgba(${theme.palette.darkBackground}, 0.04);
-$dark-bg-alpha-12:    rgba(${theme.palette.darkBackground}, 0.12);
-
-$mat-light-theme-background: (
-  background:               $light-background,
-  status-bar:               $light-bg-darker-20,
-  app-bar:                  $light-bg-darker-5,
-  hover:                    $dark-bg-alpha-4,
-  card:                     $light-bg-lighter-5,
-  dialog:                   $light-bg-lighter-5,
-  tooltip:                  $dark-bg-tooltip,
-  disabled-button:          $dark-bg-alpha-12,
-  raised-button:            $light-bg-lighter-5,
-  focused-button:           $dark-focused,
-  selected-button:          $light-bg-darker-20,
-  selected-disabled-button: $light-bg-darker-30,
-  disabled-button-toggle:   $light-bg-darker-10,
-  unselected-chip:          $light-bg-darker-10,
-  disabled-list-option:     $light-bg-darker-10,
-);
-
-// Dark bg
-$dark-background:     ${theme.palette.darkBackground};
+// Dark Theme Background
 $dark-bg-lighter-5:   lighten($dark-background, 5%);
 $dark-bg-lighter-10:  lighten($dark-background, 10%);
 $dark-bg-lighter-20:  lighten($dark-background, 20%);
 $dark-bg-lighter-30:  lighten($dark-background, 30%);
-$light-bg-alpha-4:    rgba(${theme.palette.lightBackground}, 0.04);
-$light-bg-alpha-12:   rgba(${theme.palette.lightBackground}, 0.12);
+$light-bg-alpha-4:    rgba($light-background, 0.04);
+$light-bg-alpha-12:   rgba($light-background, 0.12);
 
-// Background palette for dark themes.
+// Dark Theme Palette
 $mat-dark-theme-background: (
   background:               $dark-background,
   status-bar:               $dark-bg-lighter-20,
