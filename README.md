@@ -1,37 +1,54 @@
-# MaterialThemeGenerator
+# mat-theme
 
-View Demo at https://materialtheme.arcsine.dev
+mat-theme is an Angular PWA powered by Firebase.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+- [Live Demo](https://mat-theme.web.app/)
 
-## Development server
+![](./src/assets/social-preview.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Angular 9.x + Firebase
+- Installable PWA
+- Angular Material + Theme
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+1.  Run
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- `git clone https://github.com/davidmimay/mat-theme.git mat-theme`
+- `cd mat-theme`
+- `npm install`
 
-## Running unit tests
+2.  Create a project at https://firebase.google.com/ and grab your web config:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![](./src/assets/firebase-config.png)
 
-## Running end-to-end tests
+3.  Add the config to your Angular environment
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### src/environments/
 
-## Further help
+Update the `environment.prod.ts` and `environment.ts` files. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: 'APIKEY',
+    authDomain: 'DEV-APP.firebaseapp.com',
+    databaseURL: 'https://DEV-APP.firebaseio.com',
+    projectId: 'DEV-APP',
+    storageBucket: 'DEV-APP.appspot.com',
+    messagingSenderId: '...',
+    appId: '...',
+  }
+};
+```
 
+5.  Run `ng serve`.
 
-## Credit
+## Source
 
-http://mcg.mbitson.com/
-https://www.materialpalette.com/
-https://github.com/medialize/sass.js/
-https://github.com/mui-org/material-ui
+This project was made from https://nooglerway.web.app video lessons and courses. A highly recommended platform.
+
+[<code>LEARN MORE 💻</code>](https://nooglerway.web.app)

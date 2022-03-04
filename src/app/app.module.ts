@@ -24,6 +24,7 @@ import { ColorPickerComponent } from './palette-picker/color-picker/color-picker
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { GoogleFontItemComponent } from './google-font-selector/google-font-item/google-font-item.component';
 import { SharedModule } from './shared/shared.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SharedModule } from './shared/shared.module';
     IconNotifyComponent,
     SubPalettePickerComponent,
     ColorPickerComponent,
-    GoogleFontItemComponent
+    GoogleFontItemComponent,
+    FooterComponent
   ],
   imports: [
     SharedModule,

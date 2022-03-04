@@ -23,7 +23,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <button mat-button><img class="logo" src="./../../assets/angular-logo.svg">Material Theme</button>
+      <button mat-button><h1><img class="logo" src="./../../assets/angular-logo.svg">Material Theme</h1></button>
     
       <span class="fill-space"></span>
       <div class="button-group" *ngIf="!(isHandset$ | async)">
@@ -75,6 +75,8 @@
           
         </mat-card>
       </section>
+
+      <app-footer></app-footer>
       
     </main>
   </mat-sidenav-content> 

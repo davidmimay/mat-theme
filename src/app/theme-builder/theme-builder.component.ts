@@ -31,7 +31,7 @@ export class ThemeBuilderComponent implements OnInit {
 
   refresh: Subject<number> = new Subject();
   ready: Subject<boolean> = new Subject();
-  showSource = new FormControl(false);
+  // showSource = new FormControl(false);
   showingSource = false;
   isReady: boolean;
   source = '';
@@ -58,6 +58,12 @@ export class ThemeBuilderComponent implements OnInit {
 
   onReady() {
     this.ready.next(true);
+  }
+  
+  // new
+  
+  showSource(yes: boolean) {
+    this.showingSource = yes;
   }
 
   showCredits() {
@@ -112,11 +118,11 @@ export class ThemeBuilderComponent implements OnInit {
 
     this.version.updateValueAndValidity();
 
-    
+    /*
     this.showSource.valueChanges.subscribe(v => {
       this.showingSource = v;
     });
-    
+    */
 
     this.exporter.valueChanges.subscribe(v => {
       if (v !== 0) {

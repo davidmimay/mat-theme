@@ -5,7 +5,7 @@ import { ThemeBuilderComponent } from './theme-builder/theme-builder.component';
 
 const routes: Routes = [
   { path: '', component: ThemeBuilderComponent },
-  { path: 'preview', component: ThemePreviewComponent }, // { path: 'preview', pathMatch: 'full', component: ThemePreviewComponent },
+  { path: 'preview', pathMatch: 'full', component: ThemePreviewComponent },
 ];
 
 @NgModule({

@@ -7,3 +7,11 @@ mat-toolbar-row {
 [mat-dialog-content] {
   padding: 1em;
 }
+
+.avatar {
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 200px;
+  }
+}
