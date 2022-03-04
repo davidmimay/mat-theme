@@ -79,7 +79,7 @@ hljs.registerLanguage('scss', () => {
   };
 });
 
-hljs.initHighlighting();
+hljs.highlightAll(); // hljs.initHighlighting();
 
 export function highlight(scss: string) {
   return hljs.highlightAuto(scss, ['scss']).value;
