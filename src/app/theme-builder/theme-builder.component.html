@@ -1,4 +1,3 @@
- 
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -68,8 +67,7 @@
           </div>
 
           <div [class.ready]="isReady">
-              <iframe src="preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
-              <!-- <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe> -->
+              <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
               <pre [style.display]="showingSource ? 'block': 'none'" class="hljs">
                 <code class="scss" [innerHTML]="sourcePretty"></code>
               </pre>
@@ -82,64 +80,3 @@
   </mat-sidenav-content> 
 
 </mat-sidenav-container>
-
-
-<!--
-<div class="inner mat-typography mat-app-background">
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <img src="/assets/angular-material-logo.svg" height="48" alt="logo"> Material Theme Generator
-      <app-lightness-picker></app-lightness-picker>
-      <span class="spacer"></span>
-      <div class="view">
-        <label>View</label>
-        <mat-button-toggle-group class="theme-alternate" [formControl]="showSource">
-          <mat-button-toggle [value]="false">Demo</mat-button-toggle>
-          <mat-button-toggle [value]="true">SCSS</mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-      <div class="version">
-        <label>Version</label>
-        <mat-button-toggle-group class="theme-alternate" [formControl]="version">
-          <mat-button-toggle [value]="11">&lt;= 11</mat-button-toggle>
-          <mat-button-toggle [value]="12">12+</mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-      <div class="export">
-        <label>Export</label>
-        <mat-button-toggle-group class="theme-alternate" [formControl]="exporter">
-          <mat-button-toggle [value]="1" color="accent" (click)="exportSCSS()">SCSS</mat-button-toggle>
-          <mat-button-toggle [value]="2" color="accent" (click)="exportCSS()">CSS</mat-button-toggle>
-          <mat-button-toggle [value]="3" color="accent" (click)="makeLink()">Shareable Link</mat-button-toggle>
-        </mat-button-toggle-group>
-      </div>
-
-      <div class="button-group">
-        <button mat-flat-button color="primary" (click)="showCredits()">Credits</button>
-        <a href="https://github.com/arciisine/MaterialThemeGenerator" mat-icon-button color="primary" title="GitHub"
-          target="_blank" rel="noopener">
-          <mat-icon svgIcon="github"></mat-icon>
-        </a>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <div class="tools">
-    <app-palette-picker></app-palette-picker>
-    <mat-divider></mat-divider>
-    <app-icon-picker></app-icon-picker>
-    <mat-divider></mat-divider>
-    <app-font-picker></app-font-picker>
-  </div>
-  <div class="preview" [class.ready]="isReady">
-    <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
-    <pre [style.display]="showingSource ? 'block': 'none'"
-      class="hljs"><code class="scss" [innerHTML]="sourcePretty"></code></pre>
-  </div>
-  <div class="preview loading ready" *ngIf="!isReady">
-    <span class="message">Loading...</span>
-    <div class="wrapper">
-      <mat-spinner mode="indeterminate"></mat-spinner>
-    </div>
-  </div>
-</div>
--->
