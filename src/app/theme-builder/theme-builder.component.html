@@ -68,7 +68,8 @@
           </div>
 
           <div [class.ready]="isReady">
-              <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
+              <iframe src="preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe>
+              <!-- <iframe src="/preview" (load)="onReady()" [hidden]="showingSource" title="Material Preview"></iframe> -->
               <pre [style.display]="showingSource ? 'block': 'none'" class="hljs">
                 <code class="scss" [innerHTML]="sourcePretty"></code>
               </pre>
