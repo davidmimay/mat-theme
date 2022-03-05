@@ -47,6 +47,11 @@ export const environment = {
 
 5.  Run `ng serve`.
 
+## Developing
+
+🟠 Color name picker and preset colors on `colorpickercomponent.ts`
+🟠 Color name table with background `[style.background]="weight"` on `preview-containers.component.ts`.
+
 ## Source
 
 This project was made from https://nooglerway.web.app video lessons and courses. A highly recommended platform.

@@ -31,6 +31,7 @@ export class ColorPickerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.presets = ['red', '#000', '#2889e9', '#e920e9', '#fff500', 'rgb(236,64,64)'] 
   }
 
   setBackdrop(on: boolean) {
